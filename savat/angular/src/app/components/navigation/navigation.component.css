@@ -1,0 +1,15 @@
+img {
+  width: 50px;
+  height: 40px;
+}
+
+button {
+  outline: none;
+}
+
+mat-sidenav-container {
+  font-size: large;
+}
+.m-b{
+  font-size: large;
+}
