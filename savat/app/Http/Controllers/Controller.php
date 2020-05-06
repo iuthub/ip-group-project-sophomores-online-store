@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+require 'database.php';
 
-class Controller extends BaseController
+$policies = [];
+$sql = "SELECT id, number, amount FROM policies";
+
+if($result = mysqli_query($con,$sql))
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    $i = 0;
+    while($row = mysqli_fetch_assoc($result))
+    {
+        $policies[$i]['id']    = $row['id'];
+        $policies[$i]['number'] = $row['number'];
+        $policies[$i]['amount'] = $row['amount'];
+        $i++;
+    }
+
+    echo json_encode($policies);
+}
+else
+{
+    http_response_code(404);
 }
