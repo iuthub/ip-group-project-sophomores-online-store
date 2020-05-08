@@ -29,14 +29,17 @@ import {FormControl, Validators} from '@angular/forms';
             </mat-form-field>
           </div>
 
-          <div class="mt-3" >
+          <div class="mt-3">
             <mat-form-field appearance="outline" style="width: 600px">
               <mat-label>Leave a feedback</mat-label>
               <textarea matInput></textarea>
             </mat-form-field>
           </div>
 
-          <button mat-raised-button color="primary">Send</button>
+          <button [disabled]="emailFormControl.hasError('email')"
+                  mat-raised-button
+                  color="primary">Send
+          </button>
         </div>
       </form>
     </div>

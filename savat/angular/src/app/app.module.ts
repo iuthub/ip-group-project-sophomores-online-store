@@ -22,6 +22,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { SignUpComponent } from './components/login/sign-up/sign-up.component';
+import { SignInComponent } from './components/login/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HomeComponent,
     ProductsComponent,
     ContactsComponent,
+    SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserAnimationsModule,
