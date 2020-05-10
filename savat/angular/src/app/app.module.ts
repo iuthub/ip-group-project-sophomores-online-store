@@ -11,6 +11,19 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import {FlexModule} from '@angular/flex-layout';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { SignUpComponent } from './components/login/sign-up/sign-up.component';
+import { SignInComponent } from './components/login/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +31,12 @@ import {MatCardModule} from '@angular/material/card';
     NavigationComponent,
     HomeComponent,
     ProductsComponent,
-    ContactsComponent
+    ContactsComponent,
+    SignUpComponent,
+    SignInComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
@@ -28,6 +44,17 @@ import {MatCardModule} from '@angular/material/card';
     MatSidenavModule,
     MatMenuModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatTabsModule,
+    FlexModule,
+    MatTableModule,
+    MatSortModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

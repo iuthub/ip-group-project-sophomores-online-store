@@ -160,4 +160,8 @@ class OrderItemsTableSeeder extends Seeder
         ]); 
         $order_item->save();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b914cca8fc120c509313eb653fb1e50694e4b2cc

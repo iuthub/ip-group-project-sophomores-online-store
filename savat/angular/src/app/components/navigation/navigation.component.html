@@ -1,28 +1,25 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button mat-flat-button routerLink="" color="primary" class="navbar-brand">
-        <img class="img" src="./assets/basket.png">
-        <span>S A V A T</span>
+<mat-toolbar color="primary">
+  <div class="container">
+    <button mat-flat-button routerLink="" color="primary" class="navbar-brand">
+      <img class="img" src="./assets/basket.png">
+      <span>S A V A T</span>
+    </button>
 
+    <button class="ml-5" mat-flat-button color="primary" routerLink="products">Products</button>
+    <button class="ml-5" mat-flat-button color="primary" routerLink="contacts">Contact Us</button>
+
+    <button class="ml-5" mat-raised-button color="primary" [matMenuTriggerFor]="menu">Profile</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="sign-in">
+        <span>Enter to Account</span>
       </button>
-      <button class="ml-5 m-b" mat-flat-button color="primary" routerLink="products">Products</button>
-
-      <button class="ml-5 m-b float-right" mat-raised-button color="primary">
-        <span>Login</span>
+      <button mat-menu-item routerLink="sign-up">
+        <span>Create Account</span>
       </button>
-      <!--      <mat-menu #menu="matMenu">-->
-      <!--        <button mat-menu-item routerLink="">-->
-      <!--          <span>SIgn In</span>-->
-      <!--        </button>-->
-      <!--        <button mat-menu-item routerLink="">-->
-      <!--          <span>Sign Up</span>-->
-      <!--        </button>-->
-      <!--      </mat-menu>-->
-    </mat-toolbar>
-    <router-outlet></router-outlet>
+    </mat-menu>
+  </div>
+</mat-toolbar>
 
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
 
 

@@ -1,0 +1,21 @@
+h5 {
+  margin-left: 180px;
+  font-weight: bold;
+  color: #636b6f;
+}
+
+button {
+  outline: none;
+}
+
+mat-card {
+  width: 500px;
+}
+
+.m-r {
+  margin-left: 385px;
+}
+
+.enter-b {
+  margin-left: 240px;
+}
