@@ -44,7 +44,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     OrdersComponent,
     FeedbackListComponent,
     CustomersComponent,
-    ModalOrder
+    ModalOrder,
   ],
   imports: [
     BrowserAnimationsModule,
