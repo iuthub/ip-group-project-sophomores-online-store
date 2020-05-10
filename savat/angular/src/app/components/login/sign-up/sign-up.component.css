@@ -1,0 +1,17 @@
+mat-card {
+  width: 600px;
+}
+h5 {
+  margin-left: 180px;
+  font-weight: bold;
+  color: #636b6f;
+}
+
+button {
+  outline: none;
+}
+
+.c-b {
+  margin-left: 200px;
+  margin-top: 10px;
+}
