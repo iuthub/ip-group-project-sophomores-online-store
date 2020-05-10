@@ -2,7 +2,8 @@
   <h5>Create Account</h5>
   <mat-card-content>
     <div>
-      <form [formGroup]="registration">
+      <form [formGroup]="registration" (ngSubmit)="signUp()">
+
         <mat-form-field appearance="legacy" class="col-md-10">
           <mat-label>First Name</mat-label>
           <input matInput type="text" name="first_name">
@@ -13,12 +14,11 @@
           <input matInput type="text" name="last_name">
         </mat-form-field>
 
-        <mat-form-field hintLabel="Minimum 5 characters" appearance="legacy" class="col-md-10">
-          <mat-label>Login</mat-label>
-          <input #login minlength="5" matInput type="text" formControlName="login" name="login">
-          <mat-hint align="end">{{login.value?.length || 0  }}/16</mat-hint>
+        <mat-form-field class="col-md-10 mt-2" appearance="legacy">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email" name="email">
           <mat-error>
-            Login must be at least 5 characters
+            Enter valid email
           </mat-error>
         </mat-form-field>
 
@@ -35,25 +35,12 @@
           </button>
         </mat-form-field>
 
-        <!--        <mat-form-field appearance="legacy" class="col-md-10 mt-2">-->
-        <!--          <mat-label>Password Confirmation</mat-label>-->
-        <!--          <input matInput type="text" name="confirmation">-->
-        <!--        </mat-form-field>-->
-
         <mat-form-field appearance="legacy" class="col-md-10">
           <mat-label>Phone number</mat-label>
           <input matInput type="text" formControlName="phone_number" name="phone_number">
           <span matPrefix>+&nbsp;</span>
           <mat-error>
             Ex. 998901234567
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field class="col-md-10 mt-2" appearance="legacy">
-          <mat-label>E-mail</mat-label>
-          <input matInput type="email" formControlName="email" name="email">
-          <mat-error>
-            Enter valid email
           </mat-error>
         </mat-form-field>
 
@@ -66,7 +53,6 @@
           <mat-label>Postal Code</mat-label>
           <input #postal minlength="7" matInput type="number"
                  formControlName="postal_code" name="postal_code">
-          <!--          <mat-hint align="end">{{postal.value?.length || 0  }}/7</mat-hint>-->
           <mat-error>
             Postal code must be 7 digits
           </mat-error>
@@ -84,12 +70,10 @@
             Ex. AA1234567
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="col-md-2 c-b">Create</button>
+
+        <button [disabled]="!registration.valid" mat-raised-button color="primary" class="col-md-2 c-b">Create</button>
 
       </form>
     </div>
   </mat-card-content>
-  <br>
-  <br>
-
 </mat-card>

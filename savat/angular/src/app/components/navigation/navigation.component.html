@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <div class="container">
+  <div class="">
     <button mat-flat-button routerLink="" color="primary" class="navbar-brand">
       <img class="img" src="./assets/basket.png">
       <span>S A V A T</span>
@@ -17,6 +17,25 @@
         <span>Create Account</span>
       </button>
     </mat-menu>
+    <button class="ml-5" mat-raised-button color="accent" [matMenuTriggerFor]="admin">Admin</button>
+    <mat-menu #admin="matMenu">
+      <button mat-menu-item routerLink="add-product">
+        <span>Add Product</span>
+      </button>
+      <button mat-menu-item routerLink="orders">
+        <span>Order List</span>
+      </button>
+      <button mat-menu-item routerLink="products">
+        <span>Product List</span>
+      </button>
+      <button mat-menu-item routerLink="feedback-list">
+        <span>Feedback List</span>
+      </button>
+      <button mat-menu-item routerLink="customers">
+        <span>Customer List</span>
+      </button>
+    </mat-menu>
+
   </div>
 </mat-toolbar>
 

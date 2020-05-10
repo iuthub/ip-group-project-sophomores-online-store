@@ -1,0 +1,19 @@
+<div class="container mt-5 mat-elevation-z3">
+  <mat-table [dataSource]="dataSource" matSort matSortStart="asc">
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Customer Email</mat-header-cell>
+      <mat-cell *matCellDef="let feedbacks"> {{feedbacks.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="comments">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Comments</mat-header-cell>
+      <mat-cell *matCellDef="let feedbacks"> {{feedbacks.comment}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSize]="3" [pageSizeOptions]="[3, 5, 10, 15]">
+  </mat-paginator>
+</div>

@@ -1,0 +1,20 @@
+<mat-card class="container mat-elevation-z3">
+  <h5>Add Product</h5>
+  <mat-card-content>
+    <form (ngSubmit)="addProduct()">
+
+      <mat-form-field appearance="legacy" class="col-lg-12 mt-3">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="col-lg-12">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" name="price">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="save-b">Save</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>

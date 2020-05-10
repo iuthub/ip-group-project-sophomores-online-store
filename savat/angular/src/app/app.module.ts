@@ -6,10 +6,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
-import { ContactsComponent } from './components/contacts/contacts.component';
+import {NavigationComponent} from './components/navigation/navigation.component';
+import {HomeComponent} from './components/home/home.component';
+import {ModalOrder, ProductsComponent} from './components/products/products.component';
+import {ContactsComponent} from './components/contacts/contacts.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -22,8 +22,14 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { SignUpComponent } from './components/login/sign-up/sign-up.component';
-import { SignInComponent } from './components/login/sign-in/sign-in.component';
+import {SignUpComponent} from './components/login/sign-up/sign-up.component';
+import {SignInComponent} from './components/login/sign-in/sign-in.component';
+import {AddProductComponent} from './components/admin/add-product/add-product.component';
+import {OrdersComponent} from './components/admin/orders/orders.component';
+import {FeedbackListComponent} from './components/admin/feedback-list/feedback-list.component';
+import { CustomersComponent } from './components/admin/customers/customers.component';
+import {HttpClientModule} from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,10 +40,16 @@ import { SignInComponent } from './components/login/sign-in/sign-in.component';
     ContactsComponent,
     SignUpComponent,
     SignInComponent,
+    AddProductComponent,
+    OrdersComponent,
+    FeedbackListComponent,
+    CustomersComponent,
+    ModalOrder
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule,
@@ -54,7 +66,8 @@ import { SignInComponent } from './components/login/sign-in/sign-in.component';
     MatSortModule,
     MatIconModule,
     MatPaginatorModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

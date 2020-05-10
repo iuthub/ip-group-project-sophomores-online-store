@@ -14,10 +14,10 @@ if(isset($postdata) && !empty($postdata))
   $customer_id = mysqli_real_escape_string($con, (int)$request->customer_id);
   $email = mysqli_real_escape_string($con, trim($request->email));
   $comments = mysqli_real_escape_string($con, trim($request->comments));
-    
+
 
   // Create.
-  $sql = "INSERT INTO 'feedback_list'('customer_id', 'email', 'comments') VALUES ('{$customer_id}','{$email}', null)";
+  $sql = "INSERT INTO 'feedback_list'('email', 'comments') VALUES ('{$email}', '{$customer_id}')";
 
   if(mysqli_query($con,$sql))
   {

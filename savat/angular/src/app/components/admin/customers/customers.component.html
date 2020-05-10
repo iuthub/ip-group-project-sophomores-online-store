@@ -1,0 +1,50 @@
+<div class="mt-3 d-flex justify-content-center">
+  <mat-form-field class="col-3">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Search...">
+  </mat-form-field>
+</div>
+
+<div class="container-fluid">
+  <mat-table [dataSource]="dataSource" matSort matSortStart="asc">
+
+    <ng-container matColumnDef="customer_id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+      <mat-cell *matCellDef="let customers"> {{customers.customer_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="first_name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+      <mat-cell *matCellDef="let customers"> {{customers.first_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="last_name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+      <mat-cell *matCellDef="let customers"> {{customers.last_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell [ngClass]="'email-column'" *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+      <mat-cell [ngClass]="'email-column'" *matCellDef="let customers"> {{customers.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+      <mat-cell *matCellDef="let customers"> {{customers.phone}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="city_name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
+      <mat-cell *matCellDef="let customers"> {{customers.city_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="postal_code">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Postal Code</mat-header-cell>
+      <mat-cell *matCellDef="let customers"> {{customers.postal_code}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSize]="3" [pageSizeOptions]="[3, 5, 10, 15]">
+  </mat-paginator>
+</div>
